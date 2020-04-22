@@ -13,19 +13,19 @@ import java.util.List;
 
 public class TPCheck implements Listener{
 
+    Main plugin = Main.plugin;
+    List<String> worlds = plugin.getConfig().getStringList("Blocked_Worlds");
+
     @EventHandler
     public void teleporting(PlayerTeleportEvent event) {
-        if(event.getTo().getWorld().getName().equals("event")) {
+        if(worlds.contains(event.getTo().getWorld().getName())) {
             HumanEntity humanEntity = event.getPlayer();
-            if(humanEntity.getShoulderEntityLeft() != null){
-                System.out.println("Blocked parrot from events world");
-                humanEntity.setShoulderEntityLeft(null);
-            }
-            if(humanEntity.getShoulderEntityRight() != null){
-                System.out.println("Blocked parrot from events world");
-                humanEntity.setShoulderEntityRight(null);
-            }
 
+            if(humanEntity.getShoulderEntityLeft() != null || humanEntity.getShoulderEntityRight() != null){
+                System.out.println("Blocked parrotTP to events world");
+                event.setCancelled(true);
+                humanEntity.sendMessage("You cannot take parrots into the event world");
+            }
         }
     }
 }
