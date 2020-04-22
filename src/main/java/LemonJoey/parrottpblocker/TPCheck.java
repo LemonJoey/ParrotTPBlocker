@@ -24,9 +24,9 @@ public class TPCheck implements Listener{
             HumanEntity humanEntity = event.getPlayer();
 
             if(humanEntity.getShoulderEntityLeft() != null || humanEntity.getShoulderEntityRight() != null){
-                System.out.println("Blocked parrotTP to events world");
+                System.out.println(messages.getString("parrotsblocked").replace("%w",event.getTo().getWorld().getName()));
                 event.setCancelled(true);
-                humanEntity.sendMessage(messages.getString("parrotsblocked"));
+                humanEntity.sendMessage(messages.getString("parrotsblocked").replace("%w",event.getTo().getWorld().getName()));
             }
         }
     }

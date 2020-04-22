@@ -1,3 +1,5 @@
+#Here you can change the plugins messages.
 reload: §eParrotTPBlocker config file has been reloaded.
-parrotsblocked: §4Parrots §eare not allowed in events world.
+#The "%w" gets the world you have specified in the config.
+parrotsblocked: §4Parrots §eare not allowed in %w world.
 wrongreloadcommand: §eYou must add §5reload.
