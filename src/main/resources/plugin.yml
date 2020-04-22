@@ -1,0 +1,4 @@
+name: ParrotTPBlocker
+version: @version@
+main: LemonJoey.parrottpblocker.Main
+api-version: 1.13
