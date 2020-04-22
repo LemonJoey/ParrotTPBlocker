@@ -17,7 +17,8 @@ public class CommandHandler implements Listener{
         if(event.getTo().getWorld().getName().equals("event")) {
             HumanEntity humanEntity = event.getPlayer();
             if(humanEntity.getShoulderEntityLeft() != null){
-                System.out.println("gotparrot");
+                System.out.println("Blocked parrot from ");
+                humanEntity.setShoulderEntityLeft(null);
             }
 
         }
