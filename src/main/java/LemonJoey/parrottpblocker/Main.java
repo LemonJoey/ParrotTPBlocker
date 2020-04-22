@@ -1,13 +1,16 @@
 package LemonJoey.parrottpblocker;
 
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Main extends JavaPlugin {
 
+    public static Main plugin;
+
     @Override
     public void onEnable() {
         // Plugin startup logic
-        getServer().getPluginManager().registerEvents(new CommandHandler(),this);
+
         getServer().getLogger().info("ParrotTPBlocker loaded");
     }
 

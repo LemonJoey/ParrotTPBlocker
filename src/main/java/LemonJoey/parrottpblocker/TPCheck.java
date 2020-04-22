@@ -11,7 +11,10 @@ import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CommandHandler implements Listener{
+public class TPCheck implements Listener{
+
+    Main plugin = Main.plugin;
+
     @EventHandler
     public void teleporting(PlayerTeleportEvent event) {
         if(event.getTo().getWorld().getName().equals("event")) {
@@ -19,6 +22,10 @@ public class CommandHandler implements Listener{
             if(humanEntity.getShoulderEntityLeft() != null){
                 System.out.println("Blocked parrot from ");
                 humanEntity.setShoulderEntityLeft(null);
+            }
+            if(humanEntity.getShoulderEntityRight() != null){
+                System.out.println("Blocked parrot from ");
+                humanEntity.setShoulderEntityRight(null);
             }
 
         }
