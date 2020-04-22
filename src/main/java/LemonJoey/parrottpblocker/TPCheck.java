@@ -13,18 +13,16 @@ import java.util.List;
 
 public class TPCheck implements Listener{
 
-    Main plugin = Main.plugin;
-
     @EventHandler
     public void teleporting(PlayerTeleportEvent event) {
         if(event.getTo().getWorld().getName().equals("event")) {
             HumanEntity humanEntity = event.getPlayer();
             if(humanEntity.getShoulderEntityLeft() != null){
-                System.out.println("Blocked parrot from ");
+                System.out.println("Blocked parrot from events world");
                 humanEntity.setShoulderEntityLeft(null);
             }
             if(humanEntity.getShoulderEntityRight() != null){
-                System.out.println("Blocked parrot from ");
+                System.out.println("Blocked parrot from events world");
                 humanEntity.setShoulderEntityRight(null);
             }
 

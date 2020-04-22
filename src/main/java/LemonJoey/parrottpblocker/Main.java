@@ -5,12 +5,10 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Main extends JavaPlugin {
 
-    public static Main plugin;
-
     @Override
     public void onEnable() {
         // Plugin startup logic
-
+        getServer().getPluginManager().registerEvents(new TPCheck(),this);
         getServer().getLogger().info("ParrotTPBlocker loaded");
     }
 
