@@ -1,5 +1,6 @@
 package LemonJoey.parrottpblocker;
 
+import LemonJoey.parrottpblocker.bStats.Metrics;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -18,6 +19,8 @@ public final class Main extends JavaPlugin {
         saveDefaultConfig();
         saveResource("messages.yml", false);
         setupMessages();
+        int pluginId = 7278;
+        Metrics metrics = new Metrics(this, pluginId);
         getServer().getPluginManager().registerEvents(new TPCheck(), this);
         getServer().getLogger().info("ParrotTPBlocker loaded");
         this.getCommand("ParrotTpBlocker").setExecutor(new ReloadCommand());
