@@ -2,3 +2,8 @@ name: ParrotTPBlocker
 version: @version@
 main: LemonJoey.parrottpblocker.Main
 api-version: 1.13
+
+commands:
+  ParrotTPBlocker:
+    usage: /ParrotTPBlocker
+    permission: ParrotTPBlocker.use

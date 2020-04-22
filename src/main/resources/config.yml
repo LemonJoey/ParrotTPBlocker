@@ -1,4 +1,4 @@
 #Here you can list the world you would like to prevent players teleporting with parrots to. to add more
 #worlds to the list just place them on a new line with a dash ie "- exampleworld2"
-Blocked_Worlds:
+blocked-worlds:
   - event
