@@ -1,10 +1,13 @@
 package LemonJoey.parrottpblocker;
 
 import LemonJoey.parrottpblocker.bStats.Metrics;
+import org.bukkit.configuration.InvalidConfigurationException;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Objects;
 
 public final class Main extends JavaPlugin {
@@ -17,8 +20,7 @@ public final class Main extends JavaPlugin {
         // Plugin startup logic
         plugin = this;
         saveDefaultConfig();
-        saveResource("messages.yml", false);
-        setupMessages();
+        createCustomConfig();
         int pluginId = 7278;
         Metrics metrics = new Metrics(this, pluginId);
         getServer().getPluginManager().registerEvents(new TPCheck(), this);
@@ -33,8 +35,11 @@ public final class Main extends JavaPlugin {
         getServer().getLogger().info("ParrotTPBlocker unloaded");
     }
 
-    public static void setupMessages() {
-        File file = new File(plugin.getDataFolder()+File.separator+"messages.yml");
-        messages = YamlConfiguration.loadConfiguration(file);
+    void createCustomConfig() {
+        File messages = new File(getDataFolder(), "messages.yml");
+        if (!messages.exists()) {
+            plugin.getLogger().warning("No messages.yml found, creating a new one!");
+            plugin.saveResource("messages.yml", false);
+        }
     }
 }

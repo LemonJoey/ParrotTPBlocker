@@ -16,7 +16,7 @@ public class ReloadCommand implements CommandExecutor {
         if (args.length > 0) {
             if (args[0].equalsIgnoreCase("reload")) {
                 plugin.reloadConfig();
-                plugin.setupMessages();
+                plugin.createCustomConfig();
                 sender.sendMessage(messages.getString("reload"));
                 plugin.getServer().getLogger().info(messages.getString("reload"));
             }
