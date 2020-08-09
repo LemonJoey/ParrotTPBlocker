@@ -1,13 +1,10 @@
 package LemonJoey.parrottpblocker;
 
 import LemonJoey.parrottpblocker.bStats.Metrics;
-import org.bukkit.configuration.InvalidConfigurationException;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.Objects;
 
 public final class Main extends JavaPlugin {
